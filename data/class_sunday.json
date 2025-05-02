@@ -1,0 +1,28 @@
+{
+    "classes": [
+      {
+        "single-page": "single.html",
+        "image": "images/img_1.jpg",
+        "time": "Sunday 7:30am - 8:00am",
+        "name": "Fitness Class Name #1",
+        "instructor": "By Justin Daniel",
+        "duration": "30 minutes"
+      },
+      {
+        "single-page": "single.html",
+        "image": "images/img_2.jpg",
+        "time": "Sunday 9:00am - 9:30am",
+        "name": "Fitness Class Name #2",
+        "instructor": "By Matthew Davidson",
+        "duration": "30 minutes"
+      },
+      {
+        "single-page": "single.html",
+        "image": "images/img_3.jpg",
+        "time": "Sunday 10:00am - 10:30am",
+        "name": "Fitness Class Name #3",
+        "instructor": "By Justin Daniel",
+        "duration": "30 minutes"
+      }
+    ]
+  }
