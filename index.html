@@ -388,131 +388,8 @@
         <div class="tab-content">
           <div class="tab-pane fade show active" id="nav-sunday" role="tabpanel" aria-labelledby="nav-sunday-tab">
             <div class="row">
-              <div class="col-lg-6">
-                
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_1.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #1</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
-
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_2.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #2</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
-
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_3.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #3</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
-
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_4.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #4</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
-
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_1.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #5</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
-             
-
-
-              </div>
-              <div class="col-lg-6">
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_1.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #1</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
-
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_2.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #2</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
-
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_3.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #3</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
-
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_4.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #4</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
-
-                <div class="class-item d-flex align-items-center">
-                  <a href="single.html" class="class-item-thumbnail">
-                    <img src="images/img_1.jpg" alt="Image">
-                  </a>
-                  <div class="class-item-text">
-                    <span>Sunday 7:30am - 9:00am</span>
-                    <h2><a href="single.html">Fitness Class Name #5</a></h2>
-                    <span>By Justin Daniel</span>,
-                    <span>30 minutes</span>
-                  </div>
-                </div>
+              <div class="col-lg-12">
+                <div id="sunday-classes-container"><!-- Classes will be injected here from XML --></div>
               </div>
             </div>
           </div>
@@ -1671,26 +1548,38 @@
   <script>
     $.ajax({
         type: "GET",
-        url: "data/class_sunday.xml", // updated file path
+        url: "data/class_sunday.xml",
         dataType: "xml",
         success: function(xml) {
-            classXML(xml);
+            var classesHTML = "";
+            $(xml).find("class").each(function() {
+                var singlePage = $(this).find("single-page").text();
+                var image = $(this).find("image").text();
+                var time = $(this).find("time").text();
+                var name = $(this).find("name").text();
+                var instructor = $(this).find("instructor").text();
+                var duration = $(this).find("duration").text();
+
+                classesHTML += `<div class="class-item d-flex align-items-center">
+  <a href="${singlePage}" class="class-item-thumbnail">
+    <img src="${image}" alt="Image">
+  </a>
+  <div class="class-item-text">
+    <span>${time}</span>
+    <h2><a href="${singlePage}">${name}</a></h2>
+    <span>${instructor}</span>,
+    <span>${duration}</span>
+  </div>
+</div>`;
+            });
+            $("#sunday-classes-container").html(classesHTML);
         },
         error: function() {
             console.log("Error loading XML file");
         }
     });
 
-    function classXML(xmlData) {
-        console.log("hi");
-        var class_list = xmlData.getElementsByTagName("class");
-        console.log(class_list);
-        for (var i = 0; i < class_list.length; i++) {
-            var image = class_list[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;
-            console.log(image);
-        }
-    }
-
+    // Other onload code...
     window.onload = function () {
         const contact = document.getElementById("contact-head");
         contact.innerHTML = "TAD";
