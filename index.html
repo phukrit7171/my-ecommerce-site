@@ -45,30 +45,37 @@
     </div>
 
 
-    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-
-      <div class="container-fluid">
-        <div class="d-flex align-items-center">
-          <div class="site-logo"><a href="index.html">Workout<span>.</span> </a></div>
-          <div class="ml-auto">
-            <nav class="site-navigation position-relative text-right" role="navigation">
-              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#classes-section" class="nav-link">Classes</a></li>
-                <li><a href="#schedule-section" class="nav-link">Schedule</a></li>
-                <li><a href="#trainer-section" class="nav-link">Trainer</a></li>
-                <li><a href="#services-section" class="nav-link">Services</a></li>
-                <li><a href="#contact-section" class="nav-link">Contact</a></li>
-              </ul>
-            </nav>
-            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span
-                class="icon-menu h3"></span></a>
-          </div>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Workout</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto" role="menu">
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="#home-section" role="menuitem">Home</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="#classes-section" role="menuitem">Classes</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="#schedule-section" role="menuitem">Schedule</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="#trainer-section" role="menuitem">Trainers</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="#services-section" role="menuitem">Services</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="#contact-section" role="menuitem">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
-
-    </header>
+    </nav>
 
     <a id="bgndVideo" class="player"
       data-property="{videoURL:'https://www.youtube.com/watch?v=3P6bEAlW-Vw',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:255, stopAt: 271, opacity:1}">
@@ -351,35 +358,27 @@
 
         <div class="row">
           <div class="col-12">
-            <ul class="nav days d-flex" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="sunday-tab" data-toggle="tab" href="#nav-sunday" role="tab"
-                  aria-controls="sunday" aria-selected="true">S</a>
+            <ul class="nav nav-tabs days d-flex" id="daysTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="sunday-tab" data-bs-toggle="tab" data-bs-target="#nav-sunday" type="button" role="tab" aria-controls="nav-sunday" aria-selected="true">S</button>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" id="monday-tab" data-toggle="tab" href="#nav-monday" role="tab"
-                  aria-controls="monday" aria-selected="false">M</a>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="monday-tab" data-bs-toggle="tab" data-bs-target="#nav-monday" type="button" role="tab" aria-controls="nav-monday" aria-selected="false">M</button>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#nav-tuesday" role="tab"
-                  aria-controls="tuesday" aria-selected="false">T</a>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tuesday-tab" data-bs-toggle="tab" data-bs-target="#nav-tuesday" type="button" role="tab" aria-controls="nav-tuesday" aria-selected="false">T</button>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#nav-wednesday" role="tab"
-                  aria-controls="wednesday" aria-selected="false">W</a>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="wednesday-tab" data-bs-toggle="tab" data-bs-target="#nav-wednesday" type="button" role="tab" aria-controls="nav-wednesday" aria-selected="false">W</button>
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link" id="thursday-tab" data-toggle="tab" href="#nav-thursday" role="tab"
-                  aria-controls="thursday" aria-selected="false">T</a>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="thursday-tab" data-bs-toggle="tab" data-bs-target="#nav-thursday" type="button" role="tab" aria-controls="nav-thursday" aria-selected="false">T</button>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" id="friday-tab" data-toggle="tab" href="#nav-friday" role="tab"
-                  aria-controls="friday" aria-selected="false">F</a>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="friday-tab" data-bs-toggle="tab" data-bs-target="#nav-friday" type="button" role="tab" aria-controls="nav-friday" aria-selected="false">F</button>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#nav-saturday" role="tab"
-                  aria-controls="saturday" aria-selected="false">S</a>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="saturday-tab" data-bs-toggle="tab" data-bs-target="#nav-saturday" type="button" role="tab" aria-controls="nav-saturday" aria-selected="false">S</button>
               </li>
             </ul>
           </div>
@@ -1229,7 +1228,7 @@
               <ul id="nav-login" class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="nav-item">
                   <a href="#contact-us" class="nav-link active" id="contact-tab" 
-                     role="tab" aria-controls="contact" 
+                     role="tab" aria-controls="contact-us" 
                      aria-selected="true">Contact</a>
                 </li>
                 <li role="presentation" class="nav-item">
@@ -1431,7 +1430,7 @@
               <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
               with
               <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                target="_blank">Colorlib</a>
+                target="_blank" rel="noopener noreferrer">Colorlib</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>

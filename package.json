@@ -1,0 +1,28 @@
+{
+  "name": "my-ecommerce-site",
+  "version": "1.0.0",
+  "description": "web-technology",
+  "main": "webServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon webServer.js",
+    "start": "node webServer.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phukrit7171/my-ecommerce-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phukrit7171/my-ecommerce-site/issues"
+  },
+  "homepage": "https://github.com/phukrit7171/my-ecommerce-site#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
