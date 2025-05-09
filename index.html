@@ -1265,14 +1265,14 @@
   <!-- Options will be populated here by JavaScript -->
 
 <script>
-  fetch('./data/contact_subject.json')
+  fetch('https://localhost/api/subjects') // Replace with your API endpoint
     .then(response => response.json())
     .then(data => {
-      let select = document.querySelector('#subject-select');
-      data.contactSubject.forEach(subject => {
-        let option = document.createElement('option');
-        option.value = subject;
-        option.textContent = subject;
+      const select = document.getElementById('subject-select');
+      data.forEach(subject => {
+        const option = document.createElement('option');
+        option.value = subject.id; // Assuming each subject has an 'id' property
+        option.textContent = subject.name; // Assuming each subject has a 'name' property
         select.appendChild(option);
       });
     })
