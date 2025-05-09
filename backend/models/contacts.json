@@ -1,7 +1,23 @@
-{
-  "fname": "Phukrit",
-  "lname": "Kittinontana",
-  "email": "phukrit7171@gmail.com",
-  "subject": "Hacker",
-  "message": "--wait I'm still hacking you--"
-}
+[
+  {
+    "fname": "Phukrit",
+    "lname": "Kittinontana",
+    "email": "phukrit7171@gmail.com",
+    "subject": "Software Developer",
+    "message": "qwe"
+  },
+  {
+    "fname": "Phukrit",
+    "lname": "Kittinontana",
+    "email": "phukrit7171@gmail.com",
+    "subject": "Software Developer",
+    "message": "qwe"
+  },
+  {
+    "fname": "Phukrit",
+    "lname": "Kittinontana",
+    "email": "phukrit7171@gmail.com",
+    "subject": "Software Developer",
+    "message": "ghjkl"
+  }
+]
