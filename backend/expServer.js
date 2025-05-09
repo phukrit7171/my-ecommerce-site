@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/subject', require('./routes/subject'));
+app.use('/api/contact', require('./routes/contact'));
 
 //GET api
 app.get('/api', (req, res) => {
