@@ -2,11 +2,11 @@
   "name": "my-ecommerce-site",
   "version": "1.0.0",
   "description": "web-technology",
-  "main": "webServer.js",
+  "main": "./backend/expServer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon webServer.js",
-    "start": "node webServer.js"
+    "dev": "nodemon ./backend/expServer.js",
+    "start": "node ./backend/expServer.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/phukrit7171/my-ecommerce-site#readme",
   "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
     "express": "^5.1.0"
   }
 }
