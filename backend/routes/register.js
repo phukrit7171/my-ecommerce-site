@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 routes.post('/', (req, res) => {
-    const { username, password } = req.body;
+    const { fnmae, lname,  } = req.body;
     // Here you would typically save the username and password to a database.
     // For this example, we'll just send a success message back
     if (username && password) {
