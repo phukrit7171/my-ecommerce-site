@@ -1,15 +1,22 @@
 const express = require('express');
 const cors = require('cors');
 
-const routes = express.Router();
 const app = express();
 
 // config
 const PORT = 5000;
 
 
-//Middlewar
+//Middleware
 app.use(cors());
+app.use(express.json());
+
+// Routes
+const loginRoutes = require('./routes/login');
+const registerRoutes = require('./routes/register');
+
+app.use('/api/login', loginRoutes);
+app.use('/api/register', registerRoutes);
 
 app.get('/', (req, res) => {
 	console.log(res);
