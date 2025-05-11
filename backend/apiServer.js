@@ -19,7 +19,6 @@ app.use('/api/login', loginRoutes);
 app.use('/api/register', registerRoutes);
 
 app.get('/', (req, res) => {
-	console.log(res);
 	res.end("Hello World!");
 })
 

@@ -1,11 +1,11 @@
 const express = require('express');
-const routes = express.routes();
+const routes = express.Router();
 const fs = require('fs');
 const path = require('path');
 
 routes.post('/', (req, res) => {
     const {firstName, lastName, category, occupation, email, password} = req.body;
-    
+    console.log(req.body);
     if (firstName && lastName && category && occupation && email && password) {
         const userData = {
             firstName,
