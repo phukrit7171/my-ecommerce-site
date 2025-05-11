@@ -1462,148 +1462,120 @@
     </div>
 
     <div class="site-section bg-light contact-wrap" id="contact-section">
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="contact-us-tab" data-toggle="tab" href="#contact-us" role="tab" aria-controls="contact-us" aria-selected="true">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="sign-in-tab" data-toggle="tab" href="#sign-In" role="tab" aria-controls="sign-In" aria-selected="false">Sign-In</a>
+      </li>
+    </ul>
 
-      <div class="container">
-        <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#contact-us">Contact Us</a></li>
-          <li><a data-toggle="tab" href="#register">Register</a></li>
-          <li><a data-toggle="tab" href="#sign-In">Sign-In</a></li>
-        </ul>
-
-        <div class="tab-content">
-          <div id="contact-us" class="tab-pane fade in active">
-            <div class="row justify-content-center">
-              <div class="col-md-7">
-                <form method="post" data-aos="fade">
-                  <div class="form-group row">
-                    <div class="col-md-6 mb-3 mb-lg-0">
-                      <input type="text" class="form-control" placeholder="First name">
-                    </div>
-                    <div class="col-md-6">
-                      <input type="text" class="form-control" placeholder="Last name">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="text" class="form-control" placeholder="Subject">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <textarea class="form-control" id="" cols="30" rows="10"
-                        placeholder="Write your message here."></textarea>
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-6">
-
-                      <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Send Message">
-                    </div>
-                  </div>
-
-                </form>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="contact-us" role="tabpanel" aria-labelledby="contact-us-tab">
+        <div class="row justify-content-center pt-4"> 
+          <div class="col-md-7">
+            <form method="post" data-aos="fade">
+              <div class="form-group row">
+                <div class="col-md-6 mb-3 mb-lg-0">
+                  <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div id="register" class="tab-pane fade">
-            <div class="row justify-content-center">
-              <div class="col-md-7">
-                <form method="post" data-aos="fade">
-                  <div class="form-group row">
-                    <div class="col-md-6 mb-3 mb-lg-0">
-                      <input type="text" class="form-control" placeholder="First name">
-                    </div>
-                    <div class="col-md-6">
-                      <input type="text" class="form-control" placeholder="Last name">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="text" class="form-control" placeholder="Subject">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <textarea class="form-control" id="" cols="30" rows="10"
-                        placeholder="Write your message here."></textarea>
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-6">
-
-                      <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Send Message">
-                    </div>
-                  </div>
-
-                </form>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Subject">
+                </div>
               </div>
-            </div>
-          </div>
-          <div id="sign-In" class="tab-pane fade">
-            <div class="row justify-content-center">
-              <div class="col-md-7">
-                <form method="post" data-aos="fade">
-                  <div class="form-group row">
-                    <div class="col-md-6 mb-3 mb-lg-0">
-                      <input type="text" class="form-control" placeholder="First name">
-                    </div>
-                    <div class="col-md-6">
-                      <input type="text" class="form-control" placeholder="Last name">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="text" class="form-control" placeholder="Subject">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <textarea class="form-control" id="" cols="30" rows="10"
-                        placeholder="Write your message here."></textarea>
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-6">
-
-                      <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Send Message">
-                    </div>
-                  </div>
-
-                </form>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="email" class="form-control" placeholder="Email">
+                </div>
               </div>
-            </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <textarea class="form-control" id="" cols="30" rows="10" placeholder="Write your message here."></textarea>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Send Message">
+                </div>
+              </div>
+            </form>
           </div>
-
         </div>
       </div>
 
+      <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+        <div class="row justify-content-center pt-4"> 
+          <div class="col-md-7">
+            <form method="post" data-aos="fade">
+              <div class="form-group row">
+                <div class="col-md-6 mb-3 mb-lg-0">
+                  <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Subject"> {/* อาจจะต้องเปลี่ยน placeholder */}
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="email" class="form-control" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <textarea class="form-control" id="" cols="30" rows="10" placeholder="Write your registration details here."></textarea> {/* อาจจะต้องเปลี่ยน placeholder */}
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Register"> {/* อาจจะต้องเปลี่ยน value */}
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
+      <div class="tab-pane fade" id="sign-In" role="tabpanel" aria-labelledby="sign-in-tab">
+        <div class="row justify-content-center pt-4">
+          <div class="col-md-7">
+            <form method="post" data-aos="fade">
+              <div class="form-group row">
+                <div class="col-md-12 mb-3"> 
+                  <input type="email" class="form-control" placeholder="Email address">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="password" class="form-control" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Sign In">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
 
     <footer class="footer-section bg-dark">
