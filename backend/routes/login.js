@@ -16,5 +16,4 @@ routes.post('/', (req, res) => {
     }
 });
 
-
 module.exports = routes;
