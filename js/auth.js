@@ -4,6 +4,17 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Load occupation categories
+  loadOccupationCategories();
+
+  // Handle occupation category change
+  const occupationCategorySelect = document.getElementById('occupation-category');
+  if (occupationCategorySelect) {
+    occupationCategorySelect.addEventListener('change', function() {
+      const selectedCategory = this.value;
+      loadOccupations(selectedCategory);
+    });
+  }
   // DOM elements references
   const contactForm = document.querySelector('#contact-us form');
   const registerForm = document.querySelector('#register form');
@@ -223,6 +234,57 @@ document.addEventListener('DOMContentLoaded', () => {
       if (registerLink) registerLink.style.display = 'inline-block';
       if (profileLink) profileLink.style.display = 'none';
       if (logoutLink) logoutLink.style.display = 'none';
+    }
+  }
+
+  /**
+   * Load occupation categories from JSON
+   */
+  async function loadOccupationCategories() {
+    try {
+      const response = await fetch('/json/occupation-cat.json');
+      const data = await response.json();
+      const categorySelect = document.getElementById('occupation-category');
+      
+      if (categorySelect) {
+        data['occupation-categories'].forEach(category => {
+          const option = document.createElement('option');
+          option.value = category.toLowerCase();
+          option.textContent = category;
+          categorySelect.appendChild(option);
+        });
+      }
+    } catch (error) {
+      console.error('Error loading occupation categories:', error);
+    }
+  }
+
+  /**
+   * Load specific occupations based on selected category
+   * @param {string} category - The selected occupation category
+   */
+  async function loadOccupations(category) {
+    if (!category) return;
+    
+    try {
+      const response = await fetch(`/json/${category.toLowerCase()}.json`);
+      const data = await response.json();
+      const occupationSelect = document.getElementById('occupation');
+      
+      if (occupationSelect) {
+        // Clear previous options except the first one
+        occupationSelect.innerHTML = '<option value="" disabled selected>Select your occupation</option>';
+        occupationSelect.disabled = false;
+        
+        data.occupations.forEach(occupation => {
+          const option = document.createElement('option');
+          option.value = occupation.toLowerCase();
+          option.textContent = occupation;
+          occupationSelect.appendChild(option);
+        });
+      }
+    } catch (error) {
+      console.error('Error loading occupations:', error);
     }
   }
 });
