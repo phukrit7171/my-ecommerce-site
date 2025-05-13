@@ -62,5 +62,24 @@ const API = {
       return response.json().then(err => Promise.reject(err));
     }
     return await response.json();
-  }
+  },
+  
+  /**
+   * Subscribe to a newsletter
+   * @param {string} email - User's email
+   * @returns {Promise} - Promise object with the subscription response
+   */
+  subscribe: async (email) => {
+    const response = await fetch(`${API.baseUrl}/subscribe`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email })
+    });
+    if (!response.ok) {
+      return response.json().then(err => Promise.reject(err));
+    }
+    return await response.json();
+  },
 };
