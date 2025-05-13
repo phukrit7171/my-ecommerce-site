@@ -240,23 +240,32 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Load occupation categories from JSON
    */
-  async function loadOccupationCategories() {
-    try {
-      const response = await fetch('/json/occupation-cat.json');
-      const data = await response.json();
-      const categorySelect = document.getElementById('occupation-category');
-      
-      if (categorySelect) {
-        data['occupation-categories'].forEach(category => {
-          const option = document.createElement('option');
-          option.value = category.toLowerCase();
-          option.textContent = category;
-          categorySelect.appendChild(option);
-        });
+  function loadOccupationCategories() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', './json/occupation-cat.json', true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          try {
+            const data = JSON.parse(xhr.responseText);
+            const categorySelect = document.getElementById('occupation-category');
+            if (categorySelect) {
+              data['occupation-categories'].forEach(category => {
+                const option = document.createElement('option');
+                option.value = category.toLowerCase();
+                option.textContent = category;
+                categorySelect.appendChild(option);
+              });
+            }
+          } catch (error) {
+            console.error('Error parsing occupation categories:', error);
+          }
+        } else {
+          console.error('Error loading occupation categories: HTTP ' + xhr.status);
+        }
       }
-    } catch (error) {
-      console.error('Error loading occupation categories:', error);
-    }
+    };
+    xhr.send();
   }
 
   /**
