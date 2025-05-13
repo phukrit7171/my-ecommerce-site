@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (messageDiv.parentNode === displayArea) {
               displayArea.removeChild(messageDiv);
           }
-      }, 5000);
+      }, 10000);
   }
 
   /**
