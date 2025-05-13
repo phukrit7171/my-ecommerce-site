@@ -4,6 +4,10 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // หา Element ที่เราสร้างไว้ใน HTML ด้วย id ของมัน
+  const messageDisplayArea = document.getElementById('global-message-area');
+
   // Load occupation categories
   loadOccupationCategories();
 
@@ -128,30 +132,32 @@ document.addEventListener('DOMContentLoaded', () => {
    * @param {string} type - The type of message (success, error, info)
    */
   function showMessage(message, type) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `alert alert-${type}`;
-    messageDiv.textContent = message;
-    
-    messageContainer.innerHTML = '';
-    messageContainer.appendChild(messageDiv);
-    
-    // Auto-hide message after 5 seconds
-    setTimeout(() => {
-      messageDiv.remove();
-    }, 5000);
-  
-    authMessage.textContent = message;
-    authMessage.className = ''; // Clear previous classes
-    authMessage.classList.add('message', type);
-    
-    // Hide message after 5 seconds for success messages
-    if (type === 'success') {
-      setTimeout(() => {
-        authMessage.textContent = '';
-        authMessage.className = '';
-      }, 5000);
+    // ตรวจสอบก่อนว่าหาพื้นที่เจอไหม
+    if (!messageDisplayArea) {
+        console.error("ไม่พบพื้นที่สำหรับแสดงข้อความ!");
+        return; // ออกจากฟังก์ชันถ้าหาไม่เจอ
     }
-  }
+
+    // เคลียร์ข้อความเก่าในพื้นที่นั้นออก
+    messageDisplayArea.innerHTML = '';
+
+    // สร้าง <div> ใหม่สำหรับใส่ข้อความ
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `alert alert-${type}`; // ใส่ class สำหรับตกแต่ง (เช่น ใช้ Bootstrap)
+    messageDiv.textContent = message; // ใส่ข้อความที่ต้องการแสดง
+
+    // เอา <div> ที่สร้างใหม่ไปแปะในพื้นที่แสดงข้อความ
+    messageDisplayArea.appendChild(messageDiv);
+
+    // ตั้งเวลาให้ข้อความหายไปเอง (ถ้าต้องการ)
+    setTimeout(() => {
+        // เช็คก่อนว่า messageDiv ยังอยู่ในพื้นที่แสดงผลไหม (เผื่อมีการแสดงข้อความใหม่ทับไปแล้ว)
+        if (messageDiv.parentNode === messageDisplayArea) {
+             messageDisplayArea.removeChild(messageDiv);
+        }
+    }, 5000); // 5 วินาที
+}
+
   
   /**
    * Check if user is already logged in
