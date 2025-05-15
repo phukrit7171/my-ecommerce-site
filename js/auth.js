@@ -269,7 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
            // อาจจะซ่อน tab หรือ ซ่อน content ทั้งหมด
            // authTabs.style.display = 'none'; // ซ่อน Tabs
            const tabContent = document.getElementById('myTabContent');
-           if(tabContent) tabContent.style.display = 'none'; // ซ่อน Content
+         tabContent.style.display = 'none'; // ซ่อน Content
+         showMessage('Login successful!', 'success', globalMessageArea);
       }
 
       // ตัวอย่าง: แสดงส่วนข้อมูลผู้ใช้ (คุณต้องสร้างส่วนนี้ใน HTML)

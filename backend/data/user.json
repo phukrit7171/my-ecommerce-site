@@ -14,5 +14,13 @@
     "occupation": "software-developer",
     "email": "phukrit_kittinontana@cmu.ac.th",
     "password": "1234567890"
+  },
+  {
+    "firstName": "Mr.Phukrit",
+    "lastName": "Kittinontana",
+    "category": "computer",
+    "occupation": "software-developer",
+    "email": "phukrit2005@gmail.com",
+    "password": "123456789"
   }
 ]
