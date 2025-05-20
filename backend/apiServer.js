@@ -16,7 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 const loginRoutes = require('./routes/login');
 const registerRoutes = require('./routes/register');
 const subscribeRoutes = require('./routes/subscribe');
+const contactRoutes = require('./routes/contact');
 
+app.use('/api/contact', contactRoutes);
 app.use('/api/login', loginRoutes);
 app.use('/api/register', registerRoutes);
 app.use('/api/subscribe', subscribeRoutes);

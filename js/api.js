@@ -11,19 +11,19 @@ const API = {
    * @param {Object} contactData - Contact form data
    * @returns {Promise} - Promise object with the contact form response
    */
-  // contact: async (contactData) => {
-  //   const response = await fetch(`${API.baseUrl}/contact`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(contactData)
-  //   });
-  //   if (!response.ok) {
-  //     return response.json().then(err => Promise.reject(err));
-  //   }
-  //   return await response.json();
-  // },
+  contact: async (contactData) => {
+    const response = await fetch(`${API.baseUrl}/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(contactData)
+    });
+    if (!response.ok) {
+      return response.json().then(err => Promise.reject(err));
+    }
+    return await response.json();
+  },
   
   /**
    * Login a user

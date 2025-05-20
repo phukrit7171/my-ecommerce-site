@@ -140,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // ดึงข้อมูลจากฟอร์มโดยใช้ name attribute
       const form = event.target;
       const contactData = {
-          firstName: form.elements['contactFirstName'].value,
-          lastName: form.elements['contactLastName'].value,
+          fname: form.elements['contactFirstName'].value,
+          lname: form.elements['contactLastName'].value,
           subject: form.elements['contactSubject'].value,
           email: form.elements['contactEmail'].value,
           message: form.elements['contactMessage'].value
