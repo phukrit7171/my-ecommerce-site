@@ -64,7 +64,7 @@ routes.get('/:action', (req, res) => {
     const { action } = req.params;
     switch (action) {
         case 'all':
-            const sql = `SELECT * FROM contact ORDER BY submittedAt DESC`;
+            const sql = `SELECT * FROM contact ORDER BY submittedAt DESC`; // 
             db.all(sql, [], (err, rows) => {
                 if (err) {
                     console.error('❌ Error fetching data:', err.message);
